@@ -1,0 +1,14 @@
+bq shell
+bq ls
+bq show chugokudb6sample
+bq rm chugokudb6sample.samplelist
+bq mk -t chugokudb6sample.samplelist ./community/gdgchugoku/chugokudb6/sampleschema.json
+bq load chugokudb6sample.samplelist ./community/gdgchugoku/chugokudb6/sample.csv
+bq query 'SELECT * FROM chugokudb6sample.samplelist'
+
+bq mk -t chugokudb6sample.samplelist2 ./community/gdgchugoku/chugokudb6/flattensampleschema.json
+bq load --source_format=NEWLINE_DELIMITED_JSON chugokudb6sample.samplelist2 ./community/gdgchugoku/chugokudb6/flattensample.json
+bq mk -t chugokudb6sample.samplelist3 ./community/gdgchugoku/chugokudb6/flattensample2schema.json
+bq load --source_format=NEWLINE_DELIMITED_JSON chugokudb6sample.samplelist3 ./community/gdgchugoku/chugokudb6/flattensample2.json
+bq query 'select * from chugokudb6sample.samplelist3'
+bq query 'select * from flatten(chugokudb6sample.samplelist3, skill)'

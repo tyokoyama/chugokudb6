@@ -1,0 +1,30 @@
+[{
+	"name":"number",
+	"mode":"required",
+	"type":"integer"
+},
+{
+	"name":"account",
+	"mode":"required",
+	"type":"string"
+},
+{
+	"name":"comment",
+	"type":"string"
+},
+{
+	"name":"lt",
+	"mode":"nullable",
+	"type":"integer"
+},
+{
+	"name":"afterparty",
+	"mode":"nullable",
+	"type":"string"
+},
+{
+	"name":"inputdate",
+	"mode":"required",
+	"type":"timestamp"
+}
+]

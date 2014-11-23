@@ -1,0 +1,27 @@
+[
+{
+	"name":"account",
+	"mode":"required",
+	"type":"string"
+},
+{
+	"name":"name",
+	"type":"string"
+},
+{
+	"name":"belongto",
+	"type":"record",
+	"mode":"repeated",
+	"fields": [
+		{
+			"name":"name",
+			"type":"string",
+			"mode":"required"
+		},
+		{
+			"name":"position",
+			"type":"string"
+		}
+	]
+}
+]
